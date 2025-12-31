@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .chat-container { width: 100%; max-width: 400px; height: 80vh; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; }
+        .chat-header { background: #007bff; color: white; padding: 15px; text-align: center; font-weight: bold; }
+        .chat-messages { flex: 1; padding: 20px; overflow-y: auto; background: #f8f9fa; }
+        .message { margin-bottom: 15px; display: flex; align-items: flex-end; }
+        .message.other { flex-direction: row; }
+        .message.user { flex-direction: row-reverse; }
+        .avatar { width: 35px; height: 35px; border-radius: 50%; margin: 0 10px; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #666; }
+        .bubble { max-width: 70%; padding: 10px 15px; border-radius: 18px; position: relative; }
+        .bubble.user { background: #007bff; color: white; border-bottom-right-radius: 5px; }
+        .bubble.other { background: #e9ecef; color: #333; border-bottom-left-radius: 5px; }
+        .timestamp { font-size: 11px; opacity: 0.7; margin-top: 5px; }
+        .chat-input { display: flex; padding: 15px; background: white; border-top: 1px solid #eee; }
+        .chat-input input { flex: 1; border: 1px solid #ddd; border-radius: 25px; padding: 10px 20px; outline: none; margin-right: 10px; }
+        .chat-input button { background: #007bff; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">Chat with Friend</div>
+        <div class="chat-messages" id="messages">
+            <div class="message other">
+                <div class="avatar">F</div>
+                <div class="bubble other">
